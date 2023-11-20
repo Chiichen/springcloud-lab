@@ -1,0 +1,10 @@
+server:
+  port: 7778
+spring:
+  application:
+    name: hystrix-monitor
+hystrix:
+  dashboard:
+    proxy-stream-allow-list:
+      - localhost
+    enable-ignore-connection-close-header: true
