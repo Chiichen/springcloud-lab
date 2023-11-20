@@ -1,8 +1,7 @@
 package edu.scut.entity;
 
 
-import jakarta.persistence.*;
-
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity

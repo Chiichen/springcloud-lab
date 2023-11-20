@@ -3,10 +3,6 @@ server:
 spring: # 服务名称
   application:
     name: myshop-web
-  cloud:
-    openfeign:
-      circuitbreaker:
-        enabled: true
 eureka:
   client:
     register-with-eureka: true # 作为客户端需要注册到Eureka
