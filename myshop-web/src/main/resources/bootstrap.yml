@@ -1,18 +1,13 @@
-server:
-  port: 19002
-spring: # 服务名称
-  application:
-    name: myshop-web
-  rabbitmq:
-    host: 192.168.199.82
-  zipkin:
-    base-url: http://localhost:9090
-    sender:
-      type: web
-  sleuth:
-    sampler:
-      probability: 1
-
+spring:
+  cloud:
+    config:
+      #      uri: http://localhost:10086
+      name: web
+      profile: dev
+      label: trunk
+      discovery:
+        enabled: true
+        service-id: myshop-config
 eureka:
   client:
     register-with-eureka: true # 作为客户端需要注册到Eureka
@@ -23,6 +18,3 @@ eureka:
     # 优先使用该服务的IP地址注册到Eureka，在生产环境建议改为true
     prefer-ip-address: true
 
-#myshop-user:
-#  ribbon:
-#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule

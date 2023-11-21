@@ -12,6 +12,8 @@ spring: # 服务名称
     show-sql: true # 是否打印sql语句
     generate-ddl: true # 是否自动建表
     database: mysql # jpa连接的数据库类型
+  rabbitmq:
+    host: 192.168.199.82
 eureka:
   client:
     register-with-eureka: true # 作为客户端需要注册到Eureka

@@ -5,6 +5,8 @@ import edu.scut.entity.User;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.apache.juli.logging.Log;
+import org.apache.juli.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +24,7 @@ public class WebController {
 //    @Autowired
 //    private RestTemplate restTemplate;
 
+    public static final Log log = LogFactory.getLog(WebController.class);
 
     /* * * 购票方法     */
     @ApiOperation(value = "远程方法：根据用户 ID 查询用户的方法")
@@ -31,7 +34,7 @@ public class WebController {
         //模拟当前用户
         Integer id = 2;
 
-
+        log.info("Entering order in WebController");
         User user = userController.findById(id);
 
 

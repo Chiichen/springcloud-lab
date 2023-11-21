@@ -2,6 +2,8 @@ package edu.scut.controller;
 
 import edu.scut.entity.User;
 import edu.scut.service.UserService;
+import org.apache.juli.logging.Log;
+import org.apache.juli.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
@@ -23,9 +25,11 @@ public class UserController {
         return userService.findAll();
     }
 
+    public static final Log log = LogFactory.getLog(UserController.class);
     /*** 根据id查询用户     */
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public User findById(@PathVariable Integer id) {
+        log.info("Entering findById in UserController");
         System.out.println("用户微服务端口：" + port);
         return userService.findById(id);
     }
